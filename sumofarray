@@ -1,0 +1,22 @@
+// find the sum of the array
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+	int arr[]={1,2,3};
+	int l,a,sum=0,i;
+    int size=sizeof(arr)/sizeof(arr[0]);
+	if(size<=0)
+	{
+		printf("empty file");
+	}
+	else
+	{
+		for(i=0;i<size;i++)
+		{
+			sum+=arr[i];
+		}
+		printf("%d",sum);
+	}
+	return 0;
+}

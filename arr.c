@@ -1,3 +1,4 @@
+//create an array to the given array so tha when we add the result should be 0.
 #include<stdio.h>
 #include<stdlib.h>
 int main()
@@ -5,16 +6,21 @@ int main()
 	int a1[]={1,2,3,4};
 	int a2[]={};
 	int i,size,j;
-	size=sizeof(a1)/sizeof(a1[0])
-	for(i=0,j=0;i,j<size;i++,j++)
+	size=sizeof(a1)/sizeof(a1[0]);
+	if(size<0)
 	{
-		a2[j]=a1[i]*-1;
+		printf("empty array");
 	}
-	for(j=0;j<size;j++)
+	else
 	{
-		printf("%d ",a2[j]);
+		for(i=0,j=0;i,j<size;i++,j++)
+		{
+			a2[j]=a1[i]*-1;
+		}
+		for(j=0;j<size;j++)
+		{
+			printf("%d ",a2[j]);
+		}
 	}
-	return 0;
-
-	// vish-harsh
+		return 0;
 }

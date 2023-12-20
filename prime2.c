@@ -1,45 +1,60 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<stdbool.h>
 int main()
 {
-    int arr[]={1,2,3,-1,-2};
-    int j=0,k=0,c=0,i=0,b=0,t=0;
+    int arr[]={6,8,9,17,2};
     int size=sizeof(arr)/sizeof(arr[0]);
-    int arr1[size]={};
-    int arr2[size]={};
+    bool result[size];
+    int j=0,factorial;
+    bool flag;
     if(size<=0)
     {
         printf("empty array");
+        return 0;
     }
-    else
+
+
+    for(int i=0;i<size;i++)
     {
-        for( i=0;i<size;i++)
+        if(arr[i]<=1)
         {
-            if(arr[i]<0)
+            printf("invalid");
+            
+        }
+        if(arr[i]==2)
+        {
+            result[j]=true;
+            continue;
+        }
+        else
+        {
+            factorial=0;
+            flag = true;
+            for(int k=2;k<arr[i];k++ )
             {
-                arr1[j]=arr[i];
-                j++;
+                if(arr[i]%k==0)
+                {
+                    flag=false;
+                    break;
+                }
+
+            }
+            if(flag)
+            {
+                result[j]= true;
             }
             else
             {
-                arr2[k]=arr[i];
-                k++;
+                result[j]=false;
             }
+            j++;
         }
-        for( b=0;b<=k;b++)
-        {
-            arr[b]=arr1[c];
-            c++;
-        }
-        for(int d=b;d<size;d++)
-        {
-            arr[d]=arr2[b];
-            b++;
-        }
-        for(int z=0;z<size;z++)
-        {
-            printf("%d ",arr[z]);
-        }
+    }
+
+    for(int l=0;l<size;l++)
+    {
+        printf("%s ",result[l] ?"true":"false");
     }
     return 0;
 }

@@ -5,7 +5,7 @@ Explanation: 1+2+4+5 = 12 which is even."""
 arr=[1,2,4,5]
 sum=0
 for i in arr:
-    sum=sum+1
+    sum=sum+i
 if sum%2==0:
     print("true")
 else:

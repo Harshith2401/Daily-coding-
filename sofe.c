@@ -1,10 +1,8 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<limits.h>
-
 int main()
 {
-    int num=200,k=2;
+    int num=1000;
     int flag[num + 1];
 
     // initializing the array to 1

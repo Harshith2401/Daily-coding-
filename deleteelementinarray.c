@@ -11,7 +11,7 @@ new size of array = 5*/
 #include<stdlib.h>
 int main()
 {
-    int nums[]={4,5,9,8,4,6,3};
+    int nums[]={2,2,2};
     int size=sizeof(nums)/sizeof(nums[0]);
 
     // empty array condition.
@@ -21,7 +21,7 @@ int main()
         return 0;
     }
     int end=size-1;
-    int k=4;
+    int k=2;
 
     // using end insted of size to reduse time.
     for(int i=0;i<=end;)
@@ -29,8 +29,9 @@ int main()
         if(nums[i]==k)
         {
             // marking the k value and swaping with last numbers
+            nums[i]=-1;
             int temp=nums[end];
-            nums[end]=-1;
+            nums[end]=nums[i];
             nums[i]=temp;
             end--;
         }

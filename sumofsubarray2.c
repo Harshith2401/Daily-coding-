@@ -2,15 +2,19 @@
 #include<stdlib.h>
 int main()
 {
-    int nums[]={-1,-2,-5,5,9,40,5};
+    int nums[]={0,0,0};
     int size=sizeof(nums)/sizeof(nums[0]);
-    int k=0;
-    for(int start=0;start<size;start++)
+    int k=5;
+
+    // outer loop is responsible for start index.
+    for(int i=0;i<size;i++)
     {
         int sum=0;
-        for(int end=start;end<size;end++)
+
+        // inner loop is responsible for end index
+        for(int j=i;j<size;j++)
         {
-            sum+=nums[end];
+            sum+=nums[j];
             if(sum==k)
             {
                 printf("true");

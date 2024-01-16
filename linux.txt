@@ -1,0 +1,10 @@
+ls
+mkdir
+rm
+grep
+emdir
+cd
+mv
+pwd
+man
+sort

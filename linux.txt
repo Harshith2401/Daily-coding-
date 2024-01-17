@@ -1,10 +1,27 @@
-ls
-mkdir
-rm
-grep
-emdir
-cd
-mv
-pwd
-man
-sort
+ls-  this comand is used to list out all files and directories.
+mkdir-  it creates new directory 
+rm-  rm comand is used to remove things
+grep-  it used to find the text in the given string
+cd-     it is used to enetr the directory.
+mv-  move files and directories from one file to another directory or file.
+pwd-  to check present working directory.
+man-  this to know about any comand in the directory.
+sort-  to arange the records in the particular order.
+echo-  used to print anything.
+read-  used scan anything.
+cat-  many uses one of them is cresting a file .
+tail- it is used to display last ten lines of the file.
+head  -it is used to print first ten lines of the files
+clear - clear is used to clear the terminal.
+sed -finds replaces or dleletes patterns in afile
+dif -compares two file content and their diff
+chmod  -modifies a files read write and exicute permissions.
+rmdir - remove a directory.
+cp  -it is used to copy the files or directories.
+touch -to create an empty file.
+uname -bsic info about os.
+cmp -- check to files are identical or not
+ps - displays active processes.
+passwd -- to create or update passwords.
+
+here are some linux comands . many comands have options like l,s,e,etc which have different funtions to perform.

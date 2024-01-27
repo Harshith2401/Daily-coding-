@@ -1,0 +1,3 @@
+DNS
+it is phone book where all the ip adresses of the al websites is stored here .why we do thi as pur computer doesnt ubnderstand the english languagae these are converted into un ique ip
+adresses so that the computer will understand and it is very easy to retrive

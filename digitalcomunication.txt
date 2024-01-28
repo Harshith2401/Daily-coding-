@@ -1,3 +1,29 @@
-DNS
-it is phone book where all the ip adresses of the al websites is stored here .why we do thi as pur computer doesnt ubnderstand the english languagae these are converted into un ique ip
-adresses so that the computer will understand and it is very easy to retrive
+DNS(domain name system)
+it is encyclopidia for the internet like it translates the human underdstanble languge to ip address.why we do this as pur computer doesnt ubnderstand the english languagae these are converted into unique ip
+adresses so that the computer will understand and it is very easy to retrive.
+
+WHAT HAPPENS WHEN WE TYPE www.google.com ??
+
+1.the browser checks first the url is valid one or not .then http or https is added infront of the url
+it is hyper text tranfer protocol this is security to form a highly secured link between the server and the browser 
+so tha no breches or there is no chance for hackers.
+
+2.as we know this is not computer understanding langugae so the ip address is sercehd for google.com as computer dont know it priorly
+firts with the help of dns server it serches in chache .chache is like temparrory recent data it is there for particualr time.
+if still the ip is not found there the dns server will queery other dns server .once it is found it is typically stored in the cache for the futer use 
+as next time it wiil take less time cause it is alredy there in cache.
+
+3.now the broweser got the ip address now it sends a https /http request to the server .this request is all about asking the server the content 
+of the url and why https or http its becaus eof security https or http provides secure socket layer or transport security layer so that
+no hacker can get the dtat of url it will be in the secure line.
+
+4.now we are at server now swever got the request now the server will processess it .then server will send alll the info what ever asked by the browser
+that again in http response only.but will it give like directly what ever we see at end no it gives in code formate it may be html ,java ,css all those files involved are given.
+
+5.now we again came back to browser the browser will parse the html,css,java .(parsing)-analysing like symbols strings.this is to understand the structure of the input
+and it builts a dom .dom is document object model .the  documents we got from the server it is represented in tree form like nodes
+and it enaables the programing lanuges to interact with the page . basically it is an interface for programming the web documents.
+
+6.the dom tree is combined with css(cascading style sheets ). it is a language used to describe the style and layout of website.
+it renders with the rules of css. then java script will handle the intercativity .once the rendering process is done you will see fully 
+loaded google home page .rendering is again a big process in it is basically converting the html and programming language to the visual representation which we see at final stage.

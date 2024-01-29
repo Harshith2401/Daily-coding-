@@ -1,3 +1,4 @@
+// converting a array to linked list.
 #include<stdio.h>
 #include<stdlib.h>
 // creating the node data part and adresss part.
@@ -9,18 +10,19 @@ struct node
 struct node *start=NULL;// keeping start as null.
 
 // finctions prototypes.
-struct node *create(struct node *star,int nums[],int size);
+struct node *create(struct node *start,struct node *end,int nums[],int size);
 void display(struct node *start);
 int main()
 {
     struct node *start=NULL;
+    struct node *end=NULL;
     int nums[]={1,2,3,4,5,-1};
     int size=sizeof(nums)/sizeof(nums[0]);
-    start=create(start,nums,size);
+    start=create(start,end,nums,size);
     display(start);
 }
 // funtion to create list of nodes.
-struct node *create(struct node *star,int nums[],int size)
+struct node *create(struct node *start,struct node *end ,int nums[],int size)
 {
     struct node *new_node,*ptr;
     int num;
@@ -36,15 +38,13 @@ struct node *create(struct node *star,int nums[],int size)
         if(start==NULL) // if the list empty make the first node as start.
         {
             start=new_node;
+            end=new_node;// end node to track the last node.
+
         }
         else // or append the node to the next to the present node.
         {
-            ptr=start;// starting form the first node.
-            while(ptr->next!=NULL) // traversing till the end node.
-            {
-            ptr=ptr->next;
-            }
-            ptr->next=new_node;// joining the node to the last node.
+            end->next=new_node;
+            end=new_node;
         }
     }
     return start;

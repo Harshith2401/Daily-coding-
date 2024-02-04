@@ -1,6 +1,6 @@
 /*qsn :
 
-given a LinkedIn list, delete the kth node without .*/
+given a LinkedIn list, delete n nodes from the kth position without .*/
 #include<stdio.h>
 #include<stdlib.h>
 // creating the node data part and adresss part.
@@ -13,17 +13,17 @@ struct node *start=NULL;// keeping start as null.
 
 // finctions prototypes.
 struct node *create(struct node *start,struct node *end,int nums[],int size);
-void deleting(struct node **start,int k);
+void deleting(struct node **start,int k,int n);
 void display(struct node *start);
 int main()
 {
     struct node *start=NULL;
     struct node *end=NULL;
-    int nums[]={9,6,4,5,7,-1};
+    int nums[]={1,2,3,4,5,-1};
     int size=sizeof(nums)/sizeof(nums[0]);
     start=create(start,end,nums,size);
-    int k=3,n=2;
-    deleting(&start,k+1);
+    int k=3,n=3;
+    deleting(&start,k,n);
     display(start);
 }
 // funtion to create list of nodes.
@@ -56,10 +56,10 @@ struct node *create(struct node *start,struct node *end ,int nums[],int size)
 }
 // finding out mid function.
 // used double pointer to directly modify the adrees stored in pointer. the relfections are possible.
-void deleting(struct node **start ,int k)
+void deleting(struct node **start ,int k,int n)
 {
-    int n;
-    for(int j=1;j<=
+    k=k+1;
+    for(int j=1;j<=n;j++)    
     {
         if(start==NULL)
         {
@@ -71,7 +71,6 @@ void deleting(struct node **start ,int k)
         {
             *start=ptr->next;// dletion for first node.
             free(ptr);
-            return;
 
         }
         else

@@ -1,4 +1,4 @@
-/*qsn crete a circular linked list*/
+/*qsn crete a list check if it is circular or not.*/
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -9,15 +9,20 @@ struct node
 };
 struct node* createCLL(int size,int nums[]);
 struct node *create(int nums[],int size);
-struct node*start=NULL;
-struct node*end=NULL;
+void check(struct node*start);
 int main()
 {
+    struct node*start1=NULL;
+    struct node*start2=NULL;
     int count;
     int nums[]={1,2,3,45,6,-1};
     int size=sizeof(nums)/sizeof(nums[0]);
     start1=createCLL(size,nums);
     start2=create(nums,size);
+    printf("is the createcll circular?");
+    check(start1);
+    printf("is the create circular?");
+    check(start2);
 }
 struct node* createCLL(int size,int nums[])// creating circular linked list
 {
@@ -46,16 +51,6 @@ struct node* createCLL(int size,int nums[])// creating circular linked list
     }
     if(end!=NULL) end->next=start;// making the list circular by pointing last node to starting.
     return start;
-    if(end!=NULL&&end->next==start)// checking if it is circular or not.
-
-
-    {
-        printf("true");// if the given list is circular linked list.
-    }
-    else
-    {
-        printf("false");// if the given list is not circular linked list.
-    }
 }
 struct node *create(int nums[],int size)// creating linked list.
 {
@@ -84,15 +79,28 @@ struct node *create(int nums[],int size)// creating linked list.
             end=new_node;
         }
     }
-    if(end!=NULL&&end->next==start)// checking if it is circular or not.
+    return start;
+}
+void check(struct node*start)// checking if it is circular or not.
+{
+    if (start==NULL)
     {
-        printf("true");// if the given list is circular linked list.
+        printf("empty");
+        return;
+    }
+    struct node *ptr=start->next;
+    while(ptr!=NULL&&ptr!=start)// NULL is for ll and start is for cll.
+    {
+        ptr=ptr->next;
+    }
+    if(ptr==start)// in cll it points towards start.
+    {
+        printf("true\n");
     }
     else
     {
-        printf("false");// if the given list is not circular linked list.
+        printf("false\n");
     }
-    return start;
 }
 
 

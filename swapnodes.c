@@ -10,7 +10,7 @@ void swap(struct node**start);
 void display(struct node *start);
 int main()
 {
-    int nums[]={1,2,3,4,5,6,7-1};
+    int nums[]={1,2,3,4,5,6,7,-1};
     int size=sizeof(nums)/sizeof(nums[0]);
     struct node *start=NULL;
     struct node*end=NULL;
@@ -46,27 +46,29 @@ struct node *create(struct node *start,struct node *end,int nums[],int size)
 }
 void swap(struct node**start)
 {
-    if(*start==NULL||(*start)->next==NULL)
+    if(*start==NULL||(*start)->next==NULL)// empty list and checking the next node is ther eor not to swap.
     {
         return;
     }
+    struct node*prev=NULL;
     struct node*curent=*start;
-    struct node*next=curent->next;
-    *start=curent->next;
+    struct node*next=NULL;
     while(curent!=NULL&&curent->next!=NULL)
     {
-        struct node*temp=next->next;
-        next->next=curent;
-        if(temp==NULL||temp->next==NULL)
+        next=curent->next;// the next node.
+        curent->next=next->next;//point current node to the node after next.
+        next->next=curent;//swap curent and next nodes.
+        if(prev==NULL)
         {
-            curent->next=temp;
-            break;
+            *start=next;// for the first swap
         }
-        curent->next=temp->next;
-        curent=temp;
-        next=curent->next;
+        else
+        {
+            prev->next=next;// lnking prevois paie with curent pair.
+        }
+        prev=curent;
+        curent=curent->next;
     }
-
 }
 void display(struct node *start)
 {

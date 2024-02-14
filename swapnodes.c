@@ -6,16 +6,16 @@ struct node
     struct node*next;
 };
 struct node*create(struct node*start,struct node *end,int nums[],int size);
-void swap(struct node*start,int size,int nums[]);
+void swap(struct node**start);
 void display(struct node *start);
 int main()
 {
-    int nums[]={1,2,3,4,5,6};
+    int nums[]={1,2,3,4,5,6,7-1};
     int size=sizeof(nums)/sizeof(nums[0]);
     struct node *start=NULL;
     struct node*end=NULL;
     start=create(start,end,nums,size);
-    swap(start);
+    swap(&start);
     display(start);
     return 0;
 }
@@ -44,19 +44,29 @@ struct node *create(struct node *start,struct node *end,int nums[],int size)
     }
     return start;
 }
-void swap(struct node*start,int size,int nums[])
+void swap(struct node**start)
 {
-    int temp;
-    struct node*ptr1=start;
-    struct node*ptr2=start->next;
-    for(int i=1;i<=(size/2);i++)
+    if(*start==NULL||(*start)->next==NULL)
     {
-        temp=ptr1->data;
-        ptr1->data=ptr2->data;
-        ptr1->data=temp;
-        ptr1->next->next;
-        ptr2->next->next;
+        return;
     }
+    struct node*curent=*start;
+    struct node*next=curent->next;
+    *start=curent->next;
+    while(curent!=NULL&&curent->next!=NULL)
+    {
+        struct node*temp=next->next;
+        next->next=curent;
+        if(temp==NULL||temp->next==NULL)
+        {
+            curent->next=temp;
+            break;
+        }
+        curent->next=temp->next;
+        curent=temp;
+        next=curent->next;
+    }
+
 }
 void display(struct node *start)
 {

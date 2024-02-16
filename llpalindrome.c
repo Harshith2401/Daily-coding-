@@ -1,0 +1,4 @@
+/*if the single linked list is given we should check if it is linked list or not.
+soo palindrome means if we read from front or back it should be same 
+we can go only front in linked list the main constriant is that only 
+but there is lead thyat backtracking yes if inserting the list is equal to backtracking then its palindrome.*/

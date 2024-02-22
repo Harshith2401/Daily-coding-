@@ -1,0 +1,9 @@
+there many reasons why databases are preffered over the many things
+1.handelling large volume of data
+2.data integrity and validation.
+3.concurent access and data security
+4.advanced querry and and fstest fetching of customised data.
+5.sacalability and tailor made .
+6.reecovery and back up.
+7.data redundency.
+8.intergration with applications.

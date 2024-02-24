@@ -1,0 +1,8 @@
+rdbms
+nosql
+oodbms
+hdbms
+ndbms
+imdbms
+cdbms
+gdbms

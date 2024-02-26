@@ -11,15 +11,23 @@ struct node *create(struct node *start,struct node *end,char *nums[],int size);
 struct node *marks(struct node *start,struct node *end,char *nums1[],int nums2[],int size1,int size2);
 int main()
 {
-    char *nums[]={"harsh","harshu","harsha",-1};
-    char *nums2[]={"c++","java","phython",-1};
-    int nums[]={1,2,3,-1};
-    int size=sizeof(nums)/sizeof(nums[0]);
-    int size1=sizeof(nums1)/sizeof(nums1[0]);
-    int size2=sizeof(nums2)/sizeof(nums2[0]);
-    struct node*start=NULL;
-    start=create(nums,size);
-    return 0;
+   int option;
+   do
+   {
+    printf("\n 1.create list");
+    printf("\n 2.display");
+    printf("\n\nenter your option : ");
+    scanf("%d",&option);
+    switch(option)
+    {
+        case 1: start=create(start);
+                printf("linked list created");
+                break;
+        case 2: start=display(start);
+                break;        
+    }
+   } while (option !=3);
+   return 0;
 }
 struct node *create(struct node *start,struct node *end,char *nums[],int size)
 {

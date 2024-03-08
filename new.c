@@ -70,7 +70,7 @@ struct node *marks(void)// internal linked list.
         strcpy(new_node->subject,Subject);// enetring the subject name in first data part.
         new_node->marks=marks;// entering second data part as marks.
         new_node->next=NULL;
-        if(start==NULL)
+        if(==NULL)
         {
             start=new_node;
             end=new_node;
@@ -83,20 +83,5 @@ struct node *marks(void)// internal linked list.
     
     return start;
 }
-void display(struct node *start)// display function.
-{
-    struct node*ptr=start;//for outer node.
-    struct innode*inptr;// for inner node.
-    while(ptr!=NULL)
-    {
-        printf("%s:\n ",ptr->data1);//student name.
-        inptr=ptr->data2;// entring to the inner node.
-        while(inptr!=NULL)
-        {
-            printf(" %s - %d\n",inptr->subject,inptr->marks);// printing subject and marks.
-            inptr=inptr->next; // moving to next.
 
-        }
-        ptr=ptr->next;// moving outer pointer to next.
-    }
 }

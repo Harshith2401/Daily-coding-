@@ -13,7 +13,7 @@ int main()
     }
     else
     {
-        for(int i=0;i<size;i++)
+        for(int i=0;i<size;i++)// TC=O(n)
         {
             output[row][0]=arr[i];       // storing the charecter in 2d array 
             output[row][1]=arr[i];       // here also i stored the same charecter casue while printing by chnaging 
@@ -21,10 +21,11 @@ int main()
             row++;
         }
     }
-    for(int k=0;k<row;k++)              // printing the 2d array
+    for(int k=0;k<row;k++) //TC=O(n)             // printing the 2d array
     {
         printf("%c %d\n",output[k][0],output[k][1]); // here first i used %c to print charecter next %d to print ascci value
                                                        //as i stored in integer array
     }
     return 0;
 }
+//TIME COMPLEXITY =N+N=2N==O(n).

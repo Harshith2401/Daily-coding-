@@ -13,11 +13,11 @@ int main()
     char arr[]={'a','b','c','a','c'};
     int frequency[26]={0};                  //creted a extra array of 26 size and each is initialised by0
     int size=sizeof(arr)/sizeof(arr[0]);
-    for( int i=0;i<size;i++)
+    for( int i=0;i<size;i++)//TC=O(n)
     {
         frequency[arr[i]-'a']++;            //this is to locate the array of frequency and increse the frequency a is used as ascci values.
     }
-    for(int i=0;i<26;i++)
+    for(int i=0;i<26;i++)//TC=O(n)
     {
         if(frequency[i]>0)
         {
@@ -26,3 +26,4 @@ int main()
     }
     return 0;
 }
+//TIME COMPLEXITY=O(n)+O(n)=O(2n)=O(n)

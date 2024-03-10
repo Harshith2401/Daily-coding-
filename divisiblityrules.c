@@ -1,3 +1,4 @@
+// print how many numbers are divisible by2,3,5,7 in the array.
 #include<stdio.h>
 #include<stdlib.h>
 int main()
@@ -10,7 +11,7 @@ int main()
         return 0;
     }
     int count2=0,count3=0,count5=0,count7=0;
-    for(int i=0;i<size;i++)
+    for(int i=0;i<size;i++)// TC=O(n)
     {
         if(nums[i]%2==0)
         {
@@ -35,3 +36,4 @@ int main()
     printf("divisible by 7=%d\n",count7);
     return 0;
 }
+// TIME COMPLEXITY=O(n)

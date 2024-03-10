@@ -49,3 +49,5 @@ int main()
     return 0;
 
 }
+/*time complexity =O(1) ..the time taken by programme is constant
+irrespective of the inputs you give.*/

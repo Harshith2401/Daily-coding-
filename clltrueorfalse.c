@@ -102,7 +102,7 @@ void check(struct node*start)// checking if it is circular or not.
         printf("false\n");
     }
 }
-//TIME COMPLEXITY= O(n)+O(n)+O(n)=O(3n)=O(n)
+//TIME COMPLEXITY= O(n)+O(n)+O(n)=O(3n)=O(n).....
 
 
 

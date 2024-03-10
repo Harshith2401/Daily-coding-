@@ -1,4 +1,4 @@
-/*qsn crete a circular linked list*/
+/*qsn create a circular linked list*/
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -15,14 +15,14 @@ int main()
     struct node*end=NULL;
     int nums[]={1,2,3,45,6,-1};
     int size=sizeof(nums)/sizeof(nums[0]);
-    start=createCLL(start,end,size,nums);
-    display(start);
+    start=createCLL(start,end,size,nums);// we need to calculate the tc of the function.
+    display(start);// we need to calculate the tc of the function.
 
 }
 struct node* createCLL(struct node * start, struct node *end,int size,int nums[])
 {
     struct node *new_node,*ptr;
-    for(int i=0;i<size;i++)
+    for(int i=0;i<size;i++)// TC=O(n)
     {
         if(nums[i]==-1)
         {
@@ -56,5 +56,6 @@ void display(struct node *start)
     {
     printf("%d ",ptr->data);
     ptr=ptr->next;
-    }while(ptr!=start);
+    }while(ptr!=start);// TC=O(n)
 }
+//TIME COMPLEXITY= n + n= 2n ==O(n)

@@ -31,11 +31,11 @@ int main()
     find_mid(start,count,mid);
 }
 // funtion to create list of nodes.
-struct node *create(struct node *start,struct node *end ,int nums[],int size)
+struct node *create(struct node *start,struct node *end ,int nums[],int size)//tc of this fuction is o(n)
 {
     struct node *new_node,*ptr;
     int num;
-    for(int i=0;i<size;i++)
+    for(int i=0;i<size;i++)//TC=O(n)
     {
         if(nums[i]==-1)// trminatimg the loop.
         {
@@ -59,12 +59,12 @@ struct node *create(struct node *start,struct node *end ,int nums[],int size)
     return start;
 }
 // finding out mid function.
-void find_mid(struct node *start,int count,int mid)
+void find_mid(struct node *start,int count,int mid)//tc of this fuction is o(n)
 {
     count=0;
     struct node*ptr;
     ptr=start;
-    while(ptr!=NULL)
+    while(ptr!=NULL)//TC=O(n)
     {
         count++;// counting the number of nodes to find the mid.
         ptr=ptr->next;
@@ -77,6 +77,7 @@ void find_mid(struct node *start,int count,int mid)
     mid=count/2+1;// calculating mid.
     ptr=start;
     for(int i=1;i<=mid;i++)// iterating till mid.
+    //TC=O(n/2)=O(n)
     {
         if(i==mid)// printing the node if its mid and exiting.
         {
@@ -86,3 +87,4 @@ void find_mid(struct node *start,int count,int mid)
         ptr=ptr->next;
     }
 }
+//TIME COMPLEXITY=O(n)

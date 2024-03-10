@@ -26,7 +26,7 @@ struct node *create(struct node *start,struct node *end ,int nums[],int size)
 {
     struct node *new_node,*ptr;
     int num;
-    for(int i=0;i<size;i++)
+    for(int i=0;i<size;i++)// TC=O(n).
     {
         if(nums[i]==-1)// trminatimg the loop.
         {
@@ -54,9 +54,10 @@ void display(struct node *start)
 {
     struct node*ptr;
     ptr=start;
-    while(ptr!=NULL)
+    while(ptr!=NULL)// TC=O(n) .. here also n because of the number of elements.
     {
         printf("%d ",ptr->data);
         ptr=ptr->next;
     }
 }
+//TIME COMPLEXITY=n+n=2n== O(n).

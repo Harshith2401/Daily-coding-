@@ -15,7 +15,7 @@ int main()
     }
     else
     {
-        for(int i=1;i<=num;i++)
+        for(int i=1;i<=num;i++)//TC=O(n)
         {
             if(num%i==0)
             {
@@ -24,10 +24,11 @@ int main()
             }
         }
         int size=j;
-        for( int k=0;k<j;k++)
+        for( int k=0;k<j;k++)//TC=O(n)
         {
             printf("%d ",arr[k]);
         }
     }
     return 0;
 }
+//TIMECPMPLEXITY =O(N)

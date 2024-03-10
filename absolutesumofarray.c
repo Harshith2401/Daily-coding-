@@ -10,7 +10,7 @@ int main()
 	{
 		printf("empty array");
 	}
-	for(int i=0;i<size;i++)
+	for(int i=0;i<size;i++)// TC=O(n)
 	{
 		if(arr[i]<=0)
 		{
@@ -21,3 +21,4 @@ int main()
 	printf("%d",sum);
 	return 0;
 }
+// TIME COMPLEXITY =O(n)

@@ -1,9 +1,10 @@
+//print the no of matches played to declare the winner.
 #include<stdio.h>
 #include<stdlib.h>
 int main()
 {
     int num=51,m=0;
-    while(num>1)
+    while(num>1)// TC=O(n)
     {
         if(num%2==0)
         {
@@ -20,3 +21,4 @@ int main()
     printf("%d",m);
     return 0;
 }
+//time complixity=O(n)

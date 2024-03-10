@@ -14,13 +14,13 @@ int main()
     struct node*end=NULL;
     int nums[]={1,2,3,4,5,6,-1};
     int size=sizeof(nums)/sizeof(nums[0]);
-    start=create(start,end,nums,size);
-    display(start);
+    start=create(start,end,nums,size);//TC of create()
+    display(start);// TC of display.
 }
-struct node*create(struct node*start,struct node*end,int nums[], int size)
+struct node*create(struct node*start,struct node*end,int nums[], int size)//TC of this function O(n)
 {
     struct node*new_node,*ptr;
-    for(int i=0;i<size;i++)
+    for(int i=0;i<size;i++)// TC=O(n)
     {
         if(nums[i]==-1)
         {
@@ -43,7 +43,7 @@ struct node*create(struct node*start,struct node*end,int nums[], int size)
     }
     return start;
 }
-void display(struct node*start)
+void display(struct node*start)//TC of this function O(n)
 {
     if(start==NULL)// empty list condition.
     {
@@ -52,10 +52,11 @@ void display(struct node*start)
     }
     struct node*ptr;
     ptr=start;
-    while(ptr!=NULL)
+    while(ptr!=NULL)//TC=O(n)
     {
         printf("%d ",ptr->data);
         ptr=ptr->next;
     }
     return;
 }
+//TIME COMPLEXITY ==o(n)

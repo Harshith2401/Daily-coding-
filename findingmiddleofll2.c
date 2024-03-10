@@ -27,15 +27,15 @@ int main()
     struct node *end=NULL;
     int nums[]={-1};
     int size=sizeof(nums)/sizeof(nums[0]);
-    start=create(start,end,nums,size);
-    find_mid(start);
+    start=create(start,end,nums,size);//TC of create()
+    find_mid(start);//TC of find_mid()
 }
 // funtion to create list of nodes.
-struct node *create(struct node *start,struct node *end ,int nums[],int size)
+struct node *create(struct node *start,struct node *end ,int nums[],int size)//tc of this fuction is o(n)
 {
     struct node *new_node,*ptr;
     int num;
-    for(int i=0;i<size;i++)
+    for(int i=0;i<size;i++)//TC=O(n)
     {
         if(nums[i]==-1)// trminatimg the loop.
         {
@@ -59,7 +59,7 @@ struct node *create(struct node *start,struct node *end ,int nums[],int size)
     return start;
 }
 // finding out mid function.
-void find_mid(struct node *start)
+void find_mid(struct node *start)//tc of this fuction is o(n)
 {
     if(start==NULL)
     {
@@ -69,6 +69,7 @@ void find_mid(struct node *start)
     struct node*ptr=start;
     struct node*mid=start;
     while(ptr!=NULL&&ptr->next!=NULL)// AS PTR MOVES TWO NODES AT A TIME TO ELMINATE THE OUT OF BOUND ERROR WE NEED TO CHECK THE TWO NODES.
+                                    //TC=O(n/2)==o(n)
     {
         // counting the number of nodes to find the mid.
         ptr=ptr->next->next;
@@ -76,3 +77,4 @@ void find_mid(struct node *start)
     }
     printf("%d",mid->data);
 }
+//TIME COMPLEXITY=O(n)+O(n)=O(2n)=O(n)

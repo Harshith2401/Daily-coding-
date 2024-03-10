@@ -15,3 +15,4 @@ int main()
     printf("the total matches played is %d",matches-1);
     return 0;
 }
+//TIME COMPLEXITY =O(1)

@@ -29,7 +29,7 @@ int main()
     int temp=num;
 
     // counting the number of digits.
-     while(temp!=0)        
+     while(temp!=0)//TC=o(n)
     {
         temp/=10;
         digit++;
@@ -37,14 +37,14 @@ int main()
     int arr[digit];
 
     // converting number into array.
-    for(int i=digit-1;i>=0;i--)
+    for(int i=digit-1;i>=0;i--)//TC=(n)
     {
         arr[i]=num%10;
         num/=10;
     }
 
     //important in printf.
-    for(int i=0;i<digit;i++)
+    for(int i=0;i<digit;i++)//TC=O(n)
     {
         //here arr[i] gives the digit and at the value of digit in *word[] array the word is stored.
         printf("%s",word[arr[i]]);
@@ -56,3 +56,4 @@ int main()
     }
     return 0;
 }
+//TIMECOMPLEXITY=O(N)+O(N)+O(N)=O(3N)=O(N)

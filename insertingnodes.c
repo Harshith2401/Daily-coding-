@@ -1,3 +1,4 @@
+//inserting nodes at kth position
 #include<stdio.h>
 #include<stdlib.h>
 struct node
@@ -22,10 +23,11 @@ int main()
     insert(start,nums1,k,size1);
     display(start);
 }
+//TC=O(n)
 struct node *create(struct node *start,struct node *end,int nums[],int size)
 {
     struct node*new_node,*ptr;
-    for(int i=0;i<size;i++)
+    for(int i=0;i<size;i++)//TC=O(n)
     {
         if(nums[i]==-1)
         {
@@ -47,6 +49,7 @@ struct node *create(struct node *start,struct node *end,int nums[],int size)
     }
     return start;
 }
+//TC=O(n)+O(n)=O(2n)=O(n)
 void insert(struct node *start,int nums1[],int k,int size1)
 {
     if(start==NULL)
@@ -56,7 +59,7 @@ void insert(struct node *start,int nums1[],int k,int size1)
     }
     struct node *new_node,*ptr=start,*preptr=start;
     int pos=1;
-    while(pos<k&&ptr!=NULL)// updating ptr and preptr till k.
+    while(pos<k&&ptr!=NULL)//TC=O(n)  // updating ptr and preptr till k.
     {
         ptr=ptr->next;
         preptr=ptr;
@@ -67,7 +70,7 @@ void insert(struct node *start,int nums1[],int k,int size1)
         printf("position exceeds");
         return;
     }
-    for(int i=0;i<size1;i++)
+    for(int i=0;i<size1;i++)//TC=O(n)
     {
         new_node=(struct node*)malloc(sizeof(struct node));
         new_node->data=nums1[i];
@@ -84,14 +87,16 @@ void insert(struct node *start,int nums1[],int k,int size1)
         preptr=new_node;
     }
 }
+//TC=O(n)
 void display(struct node *start)
 {
     struct node*ptr;
     ptr=start;
-    while(ptr!=NULL)
+    while(ptr!=NULL)//TC=O(n)
     {
         printf("%d ",ptr->data);
         ptr=ptr->next;
     }
 }
+//TIME COMPLEXITY=O(n)+O(n)+O(n)=O(3n)=O(n)
 

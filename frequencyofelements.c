@@ -1,3 +1,4 @@
+// print the frequency of elements in the array.
 #include<stdio.h>
 #include<stdlib.h>
 int main()
@@ -13,12 +14,13 @@ int main()
     }
     else
     {
-        for(int i=0;i<size;i++)         // outer loop where it is pointed to elements in array
+        //TC=O(n^2)
+        for(int i=0;i<size;i++)//TC=O(n)         // outer loop where it is pointed to elements in array
         {
             int frequency=1;            // making frequency 1 inside loop cause every time it checks the new elements it should come to 1.
             if(arr[i]!=INT_MAX)              // any element is INT_MAX that means it is alredy checked 
             {
-                for(int j=i+1;j<size;j++) // inner loop where it is pointed to next of elements of i.
+                for(int j=i+1;j<size;j++)//TC=O(n) // inner loop where it is pointed to next of elements of i.
                 {
                     if(arr[i]==arr[j])    // if i pointed elements is eaual to j pointed elements.
                     {
@@ -31,11 +33,13 @@ int main()
                 row++;                    // row is increased.
             }
         }
-        for(int k=0;k<row;k++)
+        for(int k=0;k<row;k++)//TC=o(n)
         {
             printf("%d %d\n",output[k][0],output[k][1]);  // printing of stored elements.
         }
     }
     return 0;
 }
+//TIME COMPLEXITY IS===O(n^2)
+
 

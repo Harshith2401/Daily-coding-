@@ -1,3 +1,4 @@
+//insertion sort and binary.
 #include<stdio.h>
 #include<stdlib.h>
 int binary_search(int nums[],int size,int target);
@@ -27,13 +28,14 @@ int main()
 }
 
 // binary search function
+//TC=O(logn)
 int binary_search(int nums[],int size,int target)
 {
     int low=0,high=size-1;
     int f=-1;
 
 
-    while(low<=high)
+    while(low<=high)//TC=O(logn)
     {
         int mid=(low+high)/2;// finding mid.
         int midvalue=nums[mid];
@@ -56,16 +58,17 @@ int binary_search(int nums[],int size,int target)
 }
 
 // insertion sort.
+//TC=O(n^2)
 void insertion_sort(int nums[],int size)
 {
-    for(int i=1;i<size;i++)
+    for(int i=1;i<size;i++)//TC=O(n)
     {
         // assigning of the key value to be inserted in correct postion.
         int k=nums[i];
         int j=i-1;
 
         // move all greater elements to one position ahed.
-        while(j>=0&&nums[j]>k)
+        while(j>=0&&nums[j]>k)//TC=O(N)
         {
             nums[j+1]=nums[j];
             j--;
@@ -75,3 +78,4 @@ void insertion_sort(int nums[],int size)
         nums[j+1]=k;
     }
 }
+//TIMECOMPLEXITY==O(n^2)+O(logn)===O(n^2)

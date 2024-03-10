@@ -16,7 +16,7 @@ int main()
         return 0;
     }
     int count=0;
-    for(int i=0;i<size;i++)
+    for(int i=0;i<size;i++)//TC=o(n)
     {
         // excuiting only if string charecter is upper or lower case .
         if((arr[i]>='A'&& arr[i]<='Z')||(arr[i]>='a' && arr[i]<='z'))
@@ -32,3 +32,4 @@ int main()
     printf("%d",count);
     return 0;
 }
+//time complixity ==O(n)

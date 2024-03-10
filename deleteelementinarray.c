@@ -24,7 +24,7 @@ int main()
     int k=2;
 
     // using end insted of size to reduse time.
-    for(int i=0;i<=end;)
+    for(int i=0;i<=end;)//TC=O(n)
     {
         if(nums[i]==k)
         {
@@ -45,10 +45,11 @@ int main()
     }
 
     // printing.
-    for(int i=0;i<size;i++)
+    for(int i=0;i<size;i++)//TC=O(n)
     {
         printf("%d ",nums[i]);
     }
     printf("\n new size of array is %d",end+1);
     return 0;
 }
+//TIME COMPLEXITY=O(n) 

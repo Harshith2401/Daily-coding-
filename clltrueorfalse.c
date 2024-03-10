@@ -1,4 +1,4 @@
-/*qsn crete a list check if it is circular or not.*/
+/*qsn create a list check if it is circular or not.*/
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -29,7 +29,7 @@ struct node* createCLL(int size,int nums[])// creating circular linked list
     struct node *start=NULL;
     struct node *end=NULL;
     struct node *new_node;
-    for(int i=0;i<size;i++)
+    for(int i=0;i<size;i++)//TC=O(n)
     {
         if(nums[i]==-1)
         {
@@ -58,7 +58,7 @@ struct node *create(int nums[],int size)// creating linked list.
     struct node *start=NULL;
     struct node *end=NULL;
     int num;
-    for(int i=0;i<size;i++)
+    for(int i=0;i<size;i++)// TC=o(n)
     {
         if(nums[i]==-1)// trminatimg the loop.
         {
@@ -89,7 +89,7 @@ void check(struct node*start)// checking if it is circular or not.
         return;
     }
     struct node *ptr=start->next;
-    while(ptr!=NULL&&ptr!=start)// NULL is for ll and start is for cll.
+    while(ptr!=NULL&&ptr!=start)// NULL is for ll and start is for cll. //TC=O(n)
     {
         ptr=ptr->next;
     }
@@ -102,6 +102,7 @@ void check(struct node*start)// checking if it is circular or not.
         printf("false\n");
     }
 }
+//TIME COMPLEXITY= O(n)+O(n)+O(n)=O(3n)=O(n)
 
 
 

@@ -29,6 +29,7 @@ int main()
     int pass_score=40;
     float pass=0,fail=0,sum=0;
     // sorting the array for median
+    //TC=O(n^2)
     for(int i=0;i<size-1;i++)
     {
         for(int j=0;j<size-i-1;j++)
@@ -42,6 +43,7 @@ int main()
         }
     }
     // calculating pass,fail,totalmarks(for mean)
+    //TC=O(n)
     for(int i=0;i<size;i++)
     {
         sum=sum+marks[i];
@@ -83,3 +85,4 @@ int main()
     }
     return 0;
 }
+//TIMECMPLEXEITY= O(n^2)+ O(n)= O(n^2)

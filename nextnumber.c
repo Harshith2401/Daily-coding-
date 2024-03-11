@@ -16,27 +16,28 @@ int main()
     int arr[]={9};
     int size=sizeof(arr)/sizeof(arr[0]);
     int num=0,j=0;
-    for(int i=0;i<size;i++)   
+    for(int i=0;i<size;i++)//TC=O(n)
     {
         num=num*10+arr[i];    // conversion of array into single number happens here 
     }                         //making single number to multiple of tens and adding the next number as the place increses it will go 100,1000... 
     int num2=num+1;            // adding +1 to that number so that we get the next number.
     int digit=0;
     int temp=num2;
-    while(temp!=0)           // counting the number of digitis in the number.
+    while(temp!=0)//TC=O(log(num2))           // counting the number of digitis in the number.
     {
         temp/=10;
         digit++;
     }
     int arr2[digit];
-    for(int i=digit-1;i>=0;i--) // storing the number from the back location.
+    for(int i=digit-1;i>=0;i--)//TC=O(n) // storing the number from the back location.
     {
         arr2[i]=num2%10;
         num2/=10;
     }
-    for(int k=0;k<digit;k++)   // printing the array in reverse formate because when pushed number it got pushed in reverse formate.
+    for(int k=0;k<digit;k++)//TC=O(n)   // printing the array in reverse formate because when pushed number it got pushed in reverse formate.
     {
         printf("%d ",arr2[k]);
     }
     return 0;
 }
+//TIMECOMPLEXITY=O(n)

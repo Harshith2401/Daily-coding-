@@ -1,3 +1,4 @@
+//merge and sort the arrays when the bothe arrays are alredy sorted
 #include<stdio.h>
 #include<stdlib.h>
 int main()
@@ -14,7 +15,7 @@ int main()
     int size=size1+size2;
     int nums[size];
     int i=0,j=0,k=0;
-    for(int m=0;m<size;m++)
+    for(int m=0;m<size;m++)//TC=O(n)
     {
         if(nums1[i]<nums2[j])
         {
@@ -29,9 +30,10 @@ int main()
             k++;
         }
     }
-    for(int i=0;i<size;i++)
+    for(int i=0;i<size;i++)//TC=O(n)
     {
         printf("%d ",nums[i]);
     }
     return 0;
 }
+//TIMECOMPLEXITY=O(n)+O(n)=O(2n)= O(n)

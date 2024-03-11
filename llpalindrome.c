@@ -25,11 +25,12 @@ int main()
     return 0;
 }
 // creating list
+//TC=O(n)
 struct node *create(int nums[],int size)
 {
     struct node*new_node,*ptr,*start=NULL,*end=NULL;
     count =0;
-    for(int i=0;i<size;i++)
+    for(int i=0;i<size;i++)//TC=O(n)
     {
         if(nums[i]==-1)
         {
@@ -53,6 +54,7 @@ struct node *create(int nums[],int size)
     return start;
 }
 // whe it has two nodes.
+//TC=O(1)
 void l(struct node*start)
 {
     if(count==2)
@@ -71,6 +73,7 @@ void l(struct node*start)
     return;
 }
 // finding the mid.
+//TC=O(n/2)=O(n)
 struct node*find_mid(struct node *start)
 {
     if(start==NULL)
@@ -80,6 +83,7 @@ struct node*find_mid(struct node *start)
     }
     struct node*ptr=start;
     struct node*mid=start;
+    //TC=O(n/2)=O(n)
     while(ptr!=NULL&&ptr->next!=NULL)// AS PTR MOVES TWO NODES AT A TIME TO ELMINATE THE OUT OF BOUND ERROR WE NEED TO CHECK THE TWO NODES.
     {
         // counting the number of nodes to find the mid.
@@ -89,10 +93,11 @@ struct node*find_mid(struct node *start)
     return mid;
 }
 // reversing the list.
+//TC=O(n)
 struct node*reverselist(struct node*start)
 {
     struct node*prev=NULL,*current=start,*next=NULL;
-    while(current!=NULL)
+    while(current!=NULL)//TC=O(n)
     {
         next=current->next;
         current->next=prev;
@@ -102,6 +107,7 @@ struct node*reverselist(struct node*start)
     return prev;
 }
 // checking the palindrome
+//TC=O(n/2)=O(n)
 int ispalindrome(struct node* start)
 {
     if(count==2)
@@ -122,7 +128,7 @@ int ispalindrome(struct node* start)
     }
     struct node*p1=start;
     struct node*p2=secondhalf;
-    while(p1!=NULL&&p2!=NULL)
+    while(p1!=NULL&&p2!=NULL)//TC=O(n/2)=O(n)
     {
         if(p1->data!=p2->data)
         {
@@ -135,3 +141,4 @@ int ispalindrome(struct node* start)
     printf("true");
     return 1;
 }
+//TIMECOMPLIXIXTY=O(n)+O(1)+O(n)+O(n)+O(n)=O(4n)+O(1)=  O(n)

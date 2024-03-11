@@ -43,14 +43,15 @@ int main()
         case 2: display(start);
                 break;        
     }
-   } while (option !=3);
+   } while (option !=3);//TC=O(1)
    return 0;
 }
+//TC=O(n)*O(m)=O(n*m)
 struct node *create(struct node *start)
 {
     struct node*new_node,*end=start;
     char name[MAX_NAME];// varaible to store the name of student.
-    while(1)
+    while(1)//TC=O(n)
     {
         printf("\n enter @ to end");
         printf("\n enter the name of the student: ");
@@ -62,7 +63,7 @@ struct node *create(struct node *start)
         }
         new_node=(struct node*)malloc(sizeof(struct node));
         strcpy(new_node->data1,name);// storing the name in first data part.
-        new_node->data2=marks();// calling marks function to fill data2
+        new_node->data2=marks();//TC=O(m)  // calling marks function to fill data2
         new_node->next=NULL;
         if(start==NULL)
         {
@@ -78,12 +79,13 @@ struct node *create(struct node *start)
     return start;
 
 }
-struct node *marks(void)// internal linked list.
+//TC=O(m)
+struct innode *marks(void)// internal linked list.
 {
     struct innode*start=NULL,*new_node,*end=NULL;
     char Subject[MAX_NAME];// to store the subject name.
     int marks;// to store the marks.
-    while(1)
+    while(1)//TC=O(m)
     {
         printf("\n enter @ to end");
         printf("\n enter the name of the subject: ");
@@ -113,15 +115,16 @@ struct node *marks(void)// internal linked list.
     }
     return start;
 }
+//TC=O(n)*O(m)=O(n*m)
 void display(struct node *start)// display function.
 {
     struct node*ptr=start;//for outer node.
     struct innode*inptr;// for inner node.
-    while(ptr!=NULL)
+    while(ptr!=NULL)//TC=O(n)
     {
         printf("%s:\n ",ptr->data1);//student name.
         inptr=ptr->data2;// entring to the inner node.
-        while(inptr!=NULL)
+        while(inptr!=NULL)//TC=O(m)
         {
             printf(" %s - %d\n",inptr->subject,inptr->marks);// printing subject and marks.
             inptr=inptr->next; // moving to next.
@@ -130,6 +133,10 @@ void display(struct node *start)// display function.
         ptr=ptr->next;// moving outer pointer to next.
     }
 }
+
+//TIMECOMPLEXETY=O(n*m)+O(n*m)=O(2(n*m))=O(n*m)
+
+
 /*NEW LEARNINGS RELATED TO STRINGS.
    
    --name[strcspn(name,"\n")] = 0;  =====This is particularly useful when reading strings using fgets(), 

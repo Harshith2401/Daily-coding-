@@ -1,10 +1,11 @@
+//finding out the size of array
 #include<stdio.h>
 #include<stdlib.h>
 int main()
 {
 	int arr[]={1,2,6,5,4};
 	int size=0,l,a;
-	while(arr[size]!='\0')
+	while(arr[size]!='\0')//TC=O(n)
 	{
 		size++;
 	}
@@ -19,3 +20,4 @@ int main()
 	}
 	return 0;
 }
+//TIMECOMPLEXITY=O(n)

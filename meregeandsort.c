@@ -33,6 +33,7 @@ int main()
         }
     }
     insertion_sort(nums,size);
+    //TC=O(n)
     for(int i=0;i<size;i++)
     {
         printf("%d ",nums[i]);
@@ -40,9 +41,10 @@ int main()
 }
 
 // inserstion sort for sorting the merged array
+//TC=O(n^2)
 void insertion_sort(int nums[],int size)
 {
-    for(int i=1;i<size;i++)
+    for(int i=1;i<size;i++)//TC=O(n)
     {
         // assigning of the key value to be inserted in correct postion.
         int k=nums[i];
@@ -59,6 +61,7 @@ void insertion_sort(int nums[],int size)
         nums[j+1]=k;
     }
 }
+//TIMECOMPLIXITY=O(n^2)+O(n)= O(n^2)
 
 /*IMPORTANT LEARNINGS 
     WHAT IF THE ARRAYS ARE VERY BIG ? THE LOOP RUNS FOR  MANY TIMES.

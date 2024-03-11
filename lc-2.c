@@ -31,7 +31,8 @@ int main ()
         printf("insufficent");
         return 0;
     }
-    for(int i=0;i<size;i++)
+    //TC=O(n)
+    for(int i=0;i<size;i++)//TC=O(n)
     {
         // knowing the first min
         if(nums[i]<=f)
@@ -52,3 +53,4 @@ int main ()
     printf("false");
     return 0;
 }
+//TIMECOMPLIXIXTY=O(n)

@@ -18,7 +18,7 @@ int main()
     }
     else
     {
-        for(int j=0,i=0;j<SIZE;j++)
+        for(int j=0,i=0;j<SIZE;j++)//TC=O(n)
         {
             if(i<size1)
             {
@@ -38,3 +38,4 @@ int main()
     }
     return 0;
 }
+//TIMECOMPLIXIXTY=O(n)

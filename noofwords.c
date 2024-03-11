@@ -28,12 +28,12 @@ int main()
     int temp=0,sp;
 
     //this loop used to iterate number of strings.
-    for(int i =0;i<size;i++)
+    for(int i =0;i<size;i++)//TC=O(n)
     {
         sp=0;//making sp(space) everytime 0for new string
 
         // in this llop i used 2d array to iterate through the letters of the string.
-        for(int j=0;sen[i][j]!='\0';j++)
+        for(int j=0;sen[i][j]!='\0';j++)//TC=O(m)
         {
             if(sen[i][j]==' ')
             {
@@ -50,3 +50,4 @@ int main()
     printf("%d",temp+1);
     return 0;
 }
+//TIMECOMPLIXIXTY=O(n)*O(m)= O(m*n)

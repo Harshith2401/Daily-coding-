@@ -27,14 +27,15 @@ int main()
     int temp,i=0,j=0;
 
     // sorting the nums1 by swaping technique.
-    while(i<size1&&j<size)
+    //TC=O(min(size1,size)*size^2)
+    while(i<size1&&j<size)//TC=O(min(size1,size))
     {
         if(nums1[i]>nums[j])
         {
             temp=nums1[i];
             nums1[i]=nums[j];
             nums[j]=temp;
-            insertion_sort(nums,size);// for every swap sorting the second array by inserstion sort.
+            insertion_sort(nums,size);//TC=O(n^2)// for every swap sorting the second array by inserstion sort.
         }
         i++;
     }
@@ -48,16 +49,17 @@ int main()
     }
     return 0;
 }
+//TC=O(n^2)
 void insertion_sort(int nums[],int size)
 {
-    for(int i=1;i<size;i++)
+    for(int i=1;i<size;i++)//TC=O(n)
     {
         // assigning of the key value to be inserted in correct postion.
         int k=nums[i];
         int j=i-1;
 
         // move all greater elements to one position ahed.
-        while(j>=0&&nums[j]>k)
+        while(j>=0&&nums[j]>k)//TC=O(n)
         {
             nums[j+1]=nums[j];
             j--;
@@ -67,3 +69,4 @@ void insertion_sort(int nums[],int size)
         nums[j+1]=k;
     }
 }
+//TIMECOMPLEXITY=O(min(size1,size)*size^2)

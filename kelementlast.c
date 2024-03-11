@@ -25,11 +25,12 @@ int main()
     find_k(start);
 }
 // funtion to create list of nodes.
+//TC=O(n)
 struct node *create(struct node *start,struct node *end ,int nums[],int size)
 {
     struct node *new_node,*ptr;
     int num;
-    for(int i=0;i<size;i++)
+    for(int i=0;i<size;i++)//TC=O(n)
     {
         if(nums[i]==-1)// trminatimg the loop.
         {
@@ -53,6 +54,7 @@ struct node *create(struct node *start,struct node *end ,int nums[],int size)
     return start;
 }
 // finding out mid function.
+//TC=O(n)
 void find_k(struct node *start)
 {
     if(start==NULL)
@@ -64,7 +66,7 @@ void find_k(struct node *start)
     struct node*slow=start;
     int index=0;
     int k=6;
-    while(fast!=NULL)
+    while(fast!=NULL)//TC=O(n)
     {
         if(index>=k)// after fast reaching the index then only slow will move starting.
         {
@@ -75,3 +77,4 @@ void find_k(struct node *start)
     }
     printf("%d",slow->data);
 }
+//TIMECOMPLIXITY=O(n)+O(n)=O(2n)=O(n)

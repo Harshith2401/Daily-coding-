@@ -8,3 +8,4 @@ int main()
     printf("Happy new year 2024 Fellas, let's rock this year");
     return 0;
 }
+//TIMECOMPLIXIXTY=O(1)

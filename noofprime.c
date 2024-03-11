@@ -13,11 +13,11 @@ int main()
     }
 
     // loop for checking the numbers untill num.
-    for(int i=num;i>1;i--)
+    for(int i=num;i>1;i--)//TC=O(n)
     {
         // declaring that number is a prime.
         bool flag=true;
-        for(int j=2;j<i;j++)
+        for(int j=2;j<i;j++)//TC=O(m)
         {
             // factor check other than 1 and itself.
             if(i%j==0)
@@ -34,3 +34,4 @@ int main()
     }
     return 0;
 }
+//TIMECOMPLIXIXTY=O(n)*O(m)= O(mn)

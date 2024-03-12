@@ -1,5 +1,7 @@
+//rotating array with function
 #include<stdio.h>
 #include<stdlib.h>
+//TC=O(n)
 void rotatearray(int arr1[], int size, int k)
 {
     int arr2[size];
@@ -52,3 +54,4 @@ int main()
         }
     }
 }
+//TIMECOMPLIXIXTY=O(n)

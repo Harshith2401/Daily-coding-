@@ -1,3 +1,4 @@
+//print true if it is prime and false if it is not.
 #include<stdio.h>
 #include<stdlib.h>
 #include<stdbool.h>
@@ -13,7 +14,7 @@ int main()
     }
     else
     {
-        for(int i=0;i<size;i++)
+        for(int i=0;i<size;i++)//TC=O(n)
         {
             if(arr[i]<=1)
             {
@@ -22,7 +23,7 @@ int main()
             else
             {
                 factorial=0;
-                for(int k=1;k<=arr[i];k++ )
+                for(int k=1;k<=arr[i];k++ )//TC=O(sqrt(m)) we run this loop for only sqrt(m).
                 {
                     if(arr[i]%k==0)
                     {
@@ -41,9 +42,10 @@ int main()
             }
         }
     }
-    for(int l=0;l<size;l++)
+    for(int l=0;l<size;l++)//TC=O(n)
     {
         printf("%s ",result[l] ?"true":"false");
     }
     return 0;
 }
+//TIMECOMPLIXIXTY=O(sqrt(m)*n)

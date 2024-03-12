@@ -72,4 +72,6 @@ void quicksort(int nums[],int low,int high)
         quicksort(nums,z+1,high);
     }
 }
+//quick sot take O(n^2) time in worst case.
+//unable to break down and soleve but the tiemcomliixty is O(n^2) cause quick sort os involved.
 

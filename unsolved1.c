@@ -61,5 +61,6 @@ int main()
     }
     return 0;
 }
+//TIMECOMPLIXIXTY=O(n)
     
  

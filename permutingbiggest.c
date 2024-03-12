@@ -24,7 +24,7 @@ int main()
     originalnum=num;
 
     // counting the number of digitis in the number.
-     while(originalnum!=0) 
+     while(originalnum!=0)//TC=O(logn)
     {
         originalnum/=10;
         digit++;
@@ -33,7 +33,7 @@ int main()
     originalnum=num;
 
     // keeping the given number in the array
-    for(int i=digit-1;i>=0;i--)
+    for(int i=digit-1;i>=0;i--)//TC=O(n)
     {
         arr[i]=num%10;
         num/=10;
@@ -41,7 +41,7 @@ int main()
 
     // finding out the maximum of array
     int max = 0;
-    for(int i=1;i<digit;i++) 
+    for(int i=1;i<digit;i++) //TC=O(n)
     {
         if(arr[i]>arr[max]) 
         {
@@ -50,7 +50,8 @@ int main()
     }
 
     //if maximum of array in their respective positions like descending order.test case
-    for(int i=0;i<digit;i++)
+    //TC=O(n)
+    for(int i=0;i<digit;i++)//TC=O(n)
     {
         // checking if the max lies in the positin it should lie.
         if(i==max)
@@ -58,7 +59,7 @@ int main()
             // if yes finding out the next max value by leaving the sorted part.
             max=i+1;
             x++;
-            for(int j=max+1;j<digit;j++)
+            for(int j=max+1;j<digit;j++)//TC=O(n)
             {
                 if(arr[j]>arr[max])
                 {
@@ -86,3 +87,4 @@ int main()
     printf("%d",num1);
     return 0;
 }
+//TIMECOMPLIXIXTY=O(n)

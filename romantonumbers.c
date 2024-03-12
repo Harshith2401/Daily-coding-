@@ -1,12 +1,13 @@
+//roman to numbers
 #include<stdio.h>
 #include<stdlib.h>
 int main()
 {
     char roman[]="IL";
     int num=0;
-    for(int i=0;roman[i]!='\0';i++)
+    for(int i=0;roman[i]!='\0';i++)//TC=O(n)
     {
-        switch(roman[i])
+        switch(roman[i])//TC=O(1)
         {
             case 'I':
             if(roman[i+1]=='V'||roman[i+1]=='X')
@@ -64,3 +65,4 @@ int main()
     printf("%d",num);
     return 0;
 }
+//TIMECOMPLIXIXTY=O(n)

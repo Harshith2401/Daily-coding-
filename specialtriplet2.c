@@ -1,3 +1,4 @@
+//prevous qsn
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
@@ -32,3 +33,4 @@ int main()
     printf("true");
     return 0;
 }
+//TIMECOMPLIXIXTY=O(n)

@@ -23,13 +23,13 @@ int main()
     /*made three pointer and made loops in such 
     way that it  checks all posible wyas of i<j<k */
     // pointing i
-    for(int i=0;i<size-2;i++)
+    for(int i=0;i<size-2;i++)//TC=O(n)
     {
         // pointing j
-        for(int j=i+1;j<size-1;j++)
+        for(int j=i+1;j<size-1;j++)//TC=(m)
         {
             // pointing k
-            for(int k=j+1;k<size;k++)
+            for(int k=j+1;k<size;k++)//TC=O(p)
             {
                 if(nums[i]>nums[j]&&nums[j]>nums[k])
                 {
@@ -42,3 +42,4 @@ int main()
     printf("false");
     return 0;
 }
+//TIMECOMPLIIXITY=O(m*n*p).

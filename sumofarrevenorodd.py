@@ -9,4 +9,5 @@ for i in arr:
 if sum%2==0:
     print("true")
 else:
-    print("false")     
+    print("false") 
+    #TIMECOMPLIXIXTY=O(n)    

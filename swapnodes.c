@@ -19,10 +19,11 @@ int main()
     display(start);
     return 0;
 }
+//TC=O(n)
 struct node *create(struct node *start,struct node *end,int nums[],int size)
 {
     struct node*new_node,*ptr;
-    for(int i=0;i<size;i++)
+    for(int i=0;i<size;i++)//TC=O(n)
     {
         if(nums[i]==-1)
         {
@@ -44,6 +45,7 @@ struct node *create(struct node *start,struct node *end,int nums[],int size)
     }
     return start;
 }
+//TC=O(n)
 void swap(struct node**start)
 {
     if(*start==NULL||(*start)->next==NULL)// empty list and checking the next node is ther eor not to swap.
@@ -53,7 +55,7 @@ void swap(struct node**start)
     struct node*prev=NULL;
     struct node*curent=*start;
     struct node*next=NULL;
-    while(curent!=NULL&&curent->next!=NULL)
+    while(curent!=NULL&&curent->next!=NULL)//TC=O(n)
     {
         next=curent->next;// the next node.
         curent->next=next->next;//point current node to the node after next.
@@ -74,9 +76,10 @@ void display(struct node *start)
 {
     struct node*ptr;
     ptr=start;
-    while(ptr!=NULL)
+    while(ptr!=NULL)//TC=O(n)
     {
         printf("%d ",ptr->data);
         ptr=ptr->next;
     }
 }
+//TIMECOMPLIXIXTY=O(n)

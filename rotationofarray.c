@@ -1,3 +1,4 @@
+//rotation of the array
 #include<stdio.h>
 #include<stdlib.h>
 int main()
@@ -57,3 +58,4 @@ int main()
     }
     return 0;
 }
+//TIMECOMPLIXITY=O(n)

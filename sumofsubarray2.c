@@ -38,3 +38,4 @@ int main()
     printf("false");
     return 0;
 }
+//TIMECOMPLIXIXY=O(n^2)

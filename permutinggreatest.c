@@ -50,3 +50,4 @@ int main()
     printf("%d",num1);
     return 0;                     
 }
+//TIMECOMPLIXIXTY=O(n)*O(n)=O(n^2).

@@ -24,7 +24,7 @@ int main()
             }
         }
         int size=j;
-        for( int k=0;k<j;k++)//TC=O(n)
+        for( int k=0;k<j;k++)//TC=O(f)
         {
             printf("%d ",arr[k]);
         }

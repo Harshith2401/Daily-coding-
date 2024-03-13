@@ -27,11 +27,12 @@ int main()
     display(start);
 }
 // funtion to create list of nodes.
+//TC=O(n)
 struct node *create(struct node *start,struct node *end ,int nums[],int size)
 {
     struct node *new_node,*ptr;
     int num;
-    for(int i=0;i<size;i++)
+    for(int i=0;i<size;i++)//TC=O(n)
     {
         if(nums[i]==-1)// trminatimg the loop.
         {
@@ -75,7 +76,7 @@ void deleting(struct node **start ,int k)
     {
         int i=1;
         struct node *ptr1=NULL;// keep track of previous nodes.
-        while(ptr!=NULL&&i<k)
+        while(ptr!=NULL&&i<k)//TC=O(n) the worst case is like travesing whole array.
         {
             ptr1=ptr;// update prev to current
             ptr=ptr->next;
@@ -93,9 +94,10 @@ void display(struct node *start)
 {
     struct node*ptr;
     ptr=start;
-    while(ptr!=NULL)
+    while(ptr!=NULL)//TC=o(N)
     {
         printf("%d ",ptr->data);
         ptr=ptr->next;
     }
 }
+//TIMECOM[LIXITY=O(n)

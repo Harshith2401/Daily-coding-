@@ -84,4 +84,4 @@ struct node *marks(void)// internal linked list.
     return start;
 }
 
-}
+}//DINT WRITE THE COMPLEXITY CAUSE CODE IS UNDER CONSTRUCTION

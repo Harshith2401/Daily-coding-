@@ -17,85 +17,126 @@ f ) What's the difference between this approach and arrays approach . Pros and c
 #include<stdlib.h>
 #include<string.h>
 #define MAX_NAME 50
-// iner node for marks and subject.
+
 struct innode
 {
     char subject[MAX_NAME];
     int marks;
     struct innode *next;
 };
-// outer node.
-struct node
+
+struct node 
 {
-    char data1[MAX_NAME];// node 1 is charecter type(student name)
-    struct innode*data2;// pointer to point the marks 
-    struct node*next;
+    char name[MAX_NAME]; 
+    struct innode *marksHead;
+    struct node *next;
+    int total;
 };
-// function prototypes.
-struct node *create(struct node *start);// function to create the outer linked list.
-struct innode *marks(struct node*student,char *subject ,int mark);// function to create the inner linked list.
-void display(struct node *start);// display
-int main()
+
+struct node *create(struct node**start,char*name);
+void marks(struct node*student,char*subject,int mark);
+void display(struct node *start);
+void topper(struct node *start);
+
+struct node *create(struct node **start, char *name) 
 {
-   struct node *start = NULL;
+    struct node *new_node=(struct node *)malloc(sizeof(struct node));
+    strcpy(new_node->name, name);
+    new_node->marksHead = NULL;
+    new_node->next = NULL;
+    new_node->total=0;
 
-    // Adding students and their marks directly
-    start = create(start,"Alice");
-    marks(start, "Math", 85);
-    Marks(start, "Physics", 90);
+    if (*start == NULL) 
+    {
+        *start = new_node;
+    } 
+    else 
+    {
+        struct node *temp = *start;
+        while (temp->next != NULL) {
+            temp = temp->next;
+        }
+        temp->next = new_node;
+    }
+    return new_node;
+}
 
-    start = create(start,"Bob");
-    Marks(start->next, "Math", 82);
-    Marks(start->next, "Physics", 88);
+void marks(struct node *student, char *subject, int mark) 
+{
+    struct innode *new_mark = (struct innode *)malloc(sizeof(struct innode));
+    strcpy(new_mark->subject, subject);
+    new_mark->marks = mark;
+    new_mark->next = student->marksHead;
+    student->marksHead = new_mark;
+    student->total+=mark;
+}
 
-    // Displaying the list
+void display(struct node *start) 
+{
+    struct node *temp = start;
+    while (temp != NULL) {
+        printf("Student: %s\n", temp->name);
+        struct innode *markTemp = temp->marksHead;
+        while (markTemp != NULL) 
+        {
+            printf("  %s: %d\n", markTemp->subject, markTemp->marks);
+            markTemp=markTemp->next;
+        }
+        printf("total marks: %d\n\n",temp->total);
+        temp=temp->next;
+    }
+}
+
+int main() 
+{
+    struct node *start = NULL;
+
+    struct node *harshith = create(&start, "harshith");
+    marks(harshith, "c language", 85);
+    marks(harshith, "c++", 100);
+    marks(harshith, "python", 70);
+    marks(harshith, "DBMS",100);
+    marks(harshith, "DSA", 100);
+    marks(harshith, "BEE", 100);
+
+    struct node *vishal = create(&start, "vishal");
+    marks(vishal, "c language", 85);
+    marks(vishal, "c++", 100);
+    marks(vishal, "python", 70);
+    marks(vishal, "DBMS",100);
+    marks(vishal, "DSA", 100);
+    marks(vishal, "BEE", 100);  
+
+    
     display(start);
+    topper(start);
 
     return 0;
 }
-struct node *create(struct node *start)
+
+
+void topper(struct node *start)
 {
-    struct node*new_node,*end,*start;
-    char name[MAX_NAME];// varaible to store the name of student.
-        
-        new_node=(struct node*)malloc(sizeof(struct node));
-        strcpy(new_node->data1,name);// storing the name in first data part.
-        new_node->data2=marks();// calling marks function to fill data2
-        new_node->next=NULL;
-        if(start==NULL)
+    int max=0;
+    struct node *temp = start;
+    while (temp != NULL) 
+    {
+        if(temp->total>max)
         {
-            start=new_node;
-            end=new_node;
+            max=temp->total;
         }
-        else
+       
+        temp=temp->next;
+    }
+    printf("topper(s) with total marks: %d\n",max);
+    temp=start;
+    while(temp!=NULL)
+    {
+        if(temp->total==max)
         {
-            end->next=new_node;
-            end=new_node;
+            printf("%s\n",temp->name);
         }
-    return start;
+        temp=temp->next;
+    }
 
 }
-struct innode *marks(struct node*student,char *subject ,int mark)// internal linked list.
-{
-    struct node *start,*end;
-   
-        
-        struct innode *new_node=(struct innode*)malloc(sizeof(struct innode));
-        strcpy(new_node->subject,subject);// enetring the subject name in first data part.
-        new_node->marks=marks;// entering second data part as marks.
-        new_node->next=NULL;
-        if(start==NULL)
-        {
-            start=new_node;
-            end=new_node;
-        }
-        else
-        {
-            end->next=new_node;
-            end=new_node;
-        }
-    
-    return start;
-}
-
-//DINT WRITE THE COMPLEXITY CAUSE CODE IS UNDER CONSTRUCTION

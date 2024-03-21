@@ -17,6 +17,8 @@ f ) What's the difference between this approach and arrays approach . Pros and c
 #include<stdlib.h>
 #include<string.h>
 #define MAX_NAME 50
+
+//node to store classaverage of subjects
 struct classaverage
 {
     char subject[MAX_NAME];
@@ -25,6 +27,7 @@ struct classaverage
     struct classaverage*next;
 };
 
+//innner node to store the subject with respective marks.
 struct innode
 {
     char subject[MAX_NAME];
@@ -32,6 +35,7 @@ struct innode
     struct innode *next;
 };
 
+//outter node to store name,subject wise marks,totals.
 struct node 
 {
     char name[MAX_NAME]; 
@@ -40,14 +44,20 @@ struct node
     int total;
 };
 
+//function prototypes.
 struct node *create(struct node**start,char*name);
 void marks(struct node*student,char*subject,int mark);
 void display(struct node *start);
 void topper(struct node *start);
-
 void average(struct node*start, struct classaverage **avgstart);
 void display_average(struct classaverage*start);
 void averagecal(struct classaverage **avgstart, char *subject,int mark);
+void fail(struct node *start);
+void sort_average(struct classaverage **avgstart);
+void sort_students(struct node **start);
+
+//creating the outter node.
+//TC=O(1)
 struct node *create(struct node **start, char *name) 
 {
     struct node *new_node=(struct node *)malloc(sizeof(struct node));
@@ -71,6 +81,8 @@ struct node *create(struct node **start, char *name)
     return new_node;
 }
 
+//creating the inner node.
+//TC=O(1)
 void marks(struct node *student, char *subject, int mark) 
 {
     struct innode *new_mark = (struct innode *)malloc(sizeof(struct innode));
@@ -81,6 +93,8 @@ void marks(struct node *student, char *subject, int mark)
     student->total+=mark;
 }
 
+// displaying the otternode and inner node.
+//TC=O(M*N)
 void display(struct node *start) 
 {
     struct node *temp = start;
@@ -97,11 +111,13 @@ void display(struct node *start)
     }
 }
 
+// main function.
 int main() 
 {
     struct node *start = NULL;
     struct classaverage *avgstart = NULL;
 
+    //all the inputs to the code.
     struct node *harshith = create(&start, "harshith");
     marks(harshith, "c language", 85);
     marks(harshith, "c++", 100);
@@ -143,17 +159,33 @@ int main()
     marks(praveen, "BEE", 20);
       
   
-
+    //all the calling funtions.
+    printf("MARKS SHEET\n");
+    display(start);//TC=O(M*N)
+    printf("\n");
+    topper(start);//TC=O(n)
+    printf("\n");
+    printf("SUBJECT WISE CLASS AVERAGE\n");
+    average(start,&avgstart);//TC=O(N*M)
+    display_average(avgstart);//TC=O(n)
+    printf("\n");
+    printf("FAILED STUDENTS\n");
+    fail(start); //TC=O(n*m)
+    printf("\n");
+    printf("SUBJECT AVERAGES IN ORDER\n");
+    sort_average(&avgstart);//TC=O(n^2)
+    display_average(avgstart);//TC=O(n)
+    printf("\n");
+    printf("STUDENTS IN ORDER WITH RESPECTIVE TO THEIR TOTALS\n");
+    sort_students(&start);//TC=O(n^2)
+    display(start);//TC=O(M*N)
     
-    display(start);
-    topper(start);
-    average(start,&avgstart);
-    display_average(avgstart);
 
     return 0;
 }
 
-
+// to display the topper with name and marks.
+//TC=O(n)
 void topper(struct node *start)
 {
     int max=0;
@@ -169,6 +201,7 @@ void topper(struct node *start)
     }
     printf("topper(s) with total marks: %d\n",max);
     temp=start;
+    //test case if there are more than one topper.
     while(temp!=NULL)
     {
         if(temp->total==max)
@@ -179,15 +212,21 @@ void topper(struct node *start)
     }
 
 }
+
+//creation of node for average calculation.
+//TC=O(1)
 void averagecal(struct classaverage **avgstart, char *subject,int mark)
 {
     struct classaverage*temp=*avgstart;
     struct classaverage*prev=NULL;
-    while(temp!=NULL&&strcmp(temp->subject,subject)!=0) 
+
+    //updation of prev and temp.
+    while(temp!=NULL&&strcmp(temp->subject,subject)!=0)
     {
         prev = temp;
         temp = temp->next;
     }
+    // creation of node.
     if(temp==NULL)
     {
         struct classaverage*newnode=(struct classaverage*)malloc(sizeof(struct classaverage));
@@ -204,12 +243,16 @@ void averagecal(struct classaverage **avgstart, char *subject,int mark)
             prev->next=newnode;
         }
     }
+    //the marks of the particualr subject are added.
     else
     {
         temp->avg+=mark;
-        temp->count++;
+        temp->count++;// counting how many times that subject is occured.
     }
 }
+
+// calcualtion of the average.
+//TC=O(N*M)
 void average(struct node*start, struct classaverage **avgstart)
 {
     struct node *temp=start;
@@ -219,7 +262,7 @@ void average(struct node*start, struct classaverage **avgstart)
         while(markTemp!=NULL)
         {
 
-            averagecal(avgstart,markTemp->subject,markTemp->marks);
+            averagecal(avgstart,markTemp->subject,markTemp->marks);//TC=O(1)
             markTemp=markTemp->next;
         }
         temp=temp->next; 
@@ -227,10 +270,13 @@ void average(struct node*start, struct classaverage **avgstart)
     struct classaverage *avgnode=*avgstart;
     while(avgnode!=NULL)
     {
-        avgnode->avg=avgnode->avg/avgnode->count;
+        avgnode->avg=avgnode->avg/avgnode->count;// dividing the total with the count(sum of ob)/(no of ob)
         avgnode=avgnode->next;
     }
 }
+
+// displaying the class averages subject wise.
+//TC=O(n)
 void display_average(struct classaverage*start)
 {
     struct classaverage*temp=start;
@@ -240,3 +286,129 @@ void display_average(struct classaverage*start)
         temp=temp->next;
     }
 }
+
+// student failing in atlest one subject.
+//TC=O(n*m)
+void fail(struct node *start) 
+{
+    struct node *temp = start;
+    while (temp != NULL) {
+        struct innode *markTemp = temp->marksHead;
+        while (markTemp != NULL) 
+        {
+            if(markTemp->marks<40)
+            {
+                printf("%s\n",temp->name);
+                break;
+            }
+            markTemp=markTemp->next;
+        }
+        temp=temp->next;
+    }
+}
+ 
+// sorting the class average o subjects in descinding order.
+//TC=O(N^2)
+void sort_average(struct classaverage **avgstart)
+{
+    if(*avgstart==NULL || (*avgstart)->next==NULL)
+    {
+        printf("NO NODES AVAILABLE");
+        return ;
+    }
+    struct classaverage *current,*index=NULL;
+    float tempavg;
+    int tempcount;
+    char tempsubject[MAX_NAME];
+    for(current=*avgstart;current!=NULL;current=current->next)
+    {
+        for(index=current->next;index!=NULL;index=index->next)
+        {
+            if(current->avg<index->avg)
+            {
+                tempavg=current->avg;
+                current->avg=index->avg;
+                index->avg=tempavg;
+
+                tempcount=current->count;
+                current->count=index->count;
+                index->count=tempcount;
+
+                strcpy(tempsubject,current->subject);
+                strcpy(current->subject,index->subject);
+                strcpy(index->subject,tempsubject);
+
+            }
+        }
+    }
+
+}
+
+//sorting of students according to their totals in descinding order.
+//TC=O(N^2)
+void sort_students(struct node **start)
+{
+    if(*start==NULL||(*start==NULL))
+    {
+        printf("NO NODES AVAILABLE");
+        return;
+    }
+    struct node *current,*index=NULL;
+    int temptotal;
+    char tempname[MAX_NAME];
+    struct innode*tempmarkshead;
+    for(current=*start;current!=NULL;current=current->next)
+    {
+        for(index=current->next;index!=NULL;index=index->next)
+        {
+            if(current->total<index->total)
+            {
+                temptotal=current->total;
+                current->total=index->total;
+                index->total=temptotal;
+
+                strcpy(tempname,current->name);
+                strcpy(current->name,index->name);
+                strcpy(index->name,tempname);
+
+                tempmarkshead=current->marksHead;
+                current->marksHead=index->marksHead;
+                index->marksHead=tempmarkshead;
+
+            }
+        }
+    }
+}
+
+//TIMECOMPLIXIXTY=O(n^2)+O(M*N).
+
+/*Pros of Linked List Approach:
+
+Dynamic size: Can easily grow or shrink without reallocating the entire structure.
+Easy insertion/deletion: Can add or remove elements without shifting the rest of the data.
+
+
+Cons of Linked List Approach:
+
+Slower access: Must traverse from the head to reach an element, O(n) access time vs. O(1) for arrays.
+Extra memory: Each node requires additional memory for the pointer(s).
+
+
+Pros of Array Approach:
+
+Fast access: Direct indexing allows O(1) access time.
+Memory efficiency: Only the data itself is stored, no extra pointers.
+
+
+Cons of Array Approach:
+
+Fixed size: Must know the maximum size in advance or reallocate the entire array to resize.
+Costly insertion/deletion: Generally requires shifting elements, which is O(n) operation.*/
+
+/*SOME POINTS TO SUMMARISE THE THINGS.
+averagecal Function: This is where you're noting down the apple weights (marks) as vendors bring them. 
+For each subject (apple type), you either add a new entry to your list or update an existing one by adding the new marks 
+(weight) and incrementing the count.
+average Function: Once all data is collected (all students' marks are noted), this function calculates
+ the average marks for each subject. It does so by going through each entry in your list (each subject), 
+ dividing the total marks by the count of students, and updating the average marks accordingly.*/

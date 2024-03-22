@@ -53,7 +53,7 @@ struct node *create(struct node **start,int new_data)
 }
 
 // inter section of linked list.
-//TC=O(n)*O(n)=O(n^2)
+//TC=O(n)*O(m)=O(m*n)
 void intersection_of_ll()
 {
     struct node*ptr1,*ptr2;
@@ -61,7 +61,7 @@ void intersection_of_ll()
     while(ptr1!=NULL)//TC=O(n)  // outer loop
     {
         ptr2=secondlist;
-        while(ptr2!=NULL)//TC=O(n) // inner loop
+        while(ptr2!=NULL)//TC=O(m) // inner loop
         {
             if(ptr1->data==ptr2->data)
             {
@@ -92,4 +92,4 @@ void display(struct node *start)
         }
     }
 }
-//TIMECOMPLXITY=O(n)+O(n^2)=O(n^2)
+//TIMECOMPLXITY=O(n*m)

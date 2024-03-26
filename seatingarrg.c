@@ -35,7 +35,15 @@ Explanation :
 #include<stdlib.h>
 int main()
 {
-    int nums[10]={1 , 10,  100,  101,  1000,  1001,  1010 , 10000 , 10001 , 10010};
-    int a=1;
-    printf("%d",nums[a-1]);
+    while k2 < (n):
+    if k1[a1][-1] == "0":
+        k1[k2] = k1[a1] + "0"
+        k2 += 1
+        if k2 >= (n):
+            break
+        k1[k2] = k1[a1] + "1"
+        k2 += 1
+        if k2 >= (n):
+            break
+        a1 += 1
 }

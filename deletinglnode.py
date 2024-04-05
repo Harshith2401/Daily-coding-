@@ -36,7 +36,7 @@ class linkedlist:
             current_node=current_node.next
         print()
 
-    def delete(self,val):
+    def delete(self,):
         current_node=self.head
         if current_node is None:
             return

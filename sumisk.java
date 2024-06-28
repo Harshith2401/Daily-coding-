@@ -25,7 +25,7 @@ public class Main {
             int num2=target-num1;
             if (mapping.containsKey(num2)&&mapping.get(num2)!=mapping.get(num1))// check the duplicate condition (same indices)
             {
-                System.out.println(mapping.get(num1)+" "+mapping.get(num2));
+                System.out.println(mapping.get(num1)+" "+mapping.get(num2
             }
         }
     }

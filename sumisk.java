@@ -25,7 +25,7 @@ public class Allsumpairs
             }
             map.putIfAbsent(nums[i],new ArrayList<>()); // when the input element is not there in map,add element with an empty array
             //map.get(nums[i]) retrieves the value (index) associated with the key nums[i] from the HashMap map.
-            //add(i) adds the current index i to the list retrieved from map.get(nums[i])
+            //add(i) adds the current index i to the list retrieved from map.get(nums[i])....
             map.get(nums[i]).add(i)
         }
         return result;

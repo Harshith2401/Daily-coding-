@@ -5,13 +5,14 @@ No of units	Price Per Unit in rupees
 101-150	3.50 (three rupees fifty paisa)
 151>=	5.00 (five rupees)
 Calculate the bill amount for the current month based on the number of units spent, the minimum bill amount should be 100 rupees.*/
+
 import java.util.Scanner;
-class Currentbill;
+class Currentbill
 {
     public static void main(String args[])
     {
-        Scanner sc =new scanner(system.in);
-        float rupees;
+        Scanner sc =new Scanner(System.in);
+        double rupees=0;
         System.out.println("Enter the number of units");
         int units=sc.nextInt();
         if(units>=1&&units<=50)

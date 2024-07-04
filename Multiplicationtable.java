@@ -34,4 +34,5 @@ class Multiplicationtable
 
     }
 }
+//TIMECOMPLEXCITY=O(n)
 

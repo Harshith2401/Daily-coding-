@@ -21,33 +21,28 @@ class FirstOccurrence
             map.get(c).add(i);
             i++;
         }
-        ArrayList<Integer>nums=new ArrayList<>();
-
-        // Collect indices of characters that appear only once
+        
+        int min=Integer.MAX_VALUE;
+        // finding out the min index.
         for (HashMap.Entry<Character, ArrayList<Integer>>entry:map.entrySet())//tc=O(n) 
         {
             if (entry.getValue().size() == 1) {
-                nums.add(entry.getValue().get(0));
+                int curr=entry.getValue().get(0);
+                if(curr<min)
+                {
+                    min=curr;
+                }
             }
         }
-
-        // return the minimum index or return -1 if no non-repeating character exists
-        if (nums.size()==0) 
+        if(min==Integer.MAX_VALUE)
         {
-            System.out.println(-1);
+            System.out.println("-1");
         } 
         else 
         {
-            int min=nums.get(0);
-            for (int index:nums)//tc=O(n)
-            {
-                if (min>index) 
-                {
-                    min=index;
-                }
-            }
             System.out.println(min);
         }
+        
     }
 }
 //TIMECOMPLECITY=O(n).

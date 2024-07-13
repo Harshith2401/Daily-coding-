@@ -11,23 +11,30 @@ Doc B : " ... "
 Given a query "Khushi writes well" 
 You print the documents in the order of score.
 If Khushi word is present in a particular doc x times, increase doc_score by x.. and keep repeating..*/
-import java.util.HashMap;
+import java.util.*;
 class search
 {
     public static void main(String args[])
     {
         String docs[]={"hello iam string one .how are you doing ..my writer is khushi",
         "hey hello",
-        "hello iam string one .how are you doing ..my writer is harshith",
+        "hello iam string one .how are you doing ..khushi is writing",
         "hello iam string one .how are you doing ..my writer is khushi.khushi is great writer",
         "hello iam string one .how are you doing ..my writer is khushi,khushi is good girl,khushi as greate taste"};
-        String target="khushi";
+        String target="khushi is writing";
         HashMap<String,Integer>map=new HashMap<>();// creation of hashmap.
         for(String doc:docs)
         {
             int result=Searchof(doc,target);
             map.put(doc,result);
         }
+       /* List<Map.Entry<String, Integer>> sortedEntries = new ArrayList<>(map.entrySet());
+        sortedEntries.sort(map.Entry.comparingByValue(Comparator.reverseOrder()));*/
+
+        for (Map.Entry<String, Integer> entry : sortedEntries) {
+            System.out.println("Document: \"" + entry.getKey() + "\" - Count of '" + target + "': " + entry.getValue());
+        }
+
         for (String key : map.keySet()) {
             System.out.println("Document:\""+ key + "\"- Count of '"+ target+"': "+map.get(key));
         }

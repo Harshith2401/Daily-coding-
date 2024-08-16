@@ -91,7 +91,7 @@ class ShoppingCart extends ShoppingList {
     }
 
     public double calculateTotal() {
-        // Calculate the total price of items in the shopping cart
+        // Calculate the total price of items in the shopping car
         double totalPrice = 0.0;
         for (Map.Entry<String, Integer> entry : cart.entrySet()) {
             String itemName = entry.getKey();

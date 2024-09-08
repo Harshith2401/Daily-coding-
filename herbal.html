@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Virtual Herbal Garden</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f9f4;
+      overflow-x: hidden;
+    }
+
+    /* Header Section */
+    header {
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 4rem 0;
+      background-image: url('https://example.com/garden-bg.jpg'); /* Beautiful herbal garden background */
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    header h1 {
+      font-size: 4rem;
+      z-index: 1;
+      position: relative;
+    }
+
+    header p {
+      font-size: 1.5rem;
+      z-index: 1;
+      position: relative;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      z-index: 1;
+      position: relative;
+    }
+
+    /* Main Section */
+    main {
+      padding: 2em;
+    }
+
+    /* Parallax Section */
+    .parallax {
+      background-image: url('https://example.com/virtual-tour.jpg');
+      min-height: 500px;
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .parallax-content {
+      text-align: center;
+      padding: 8rem 2rem;
+      color: white;
+    }
+
+    .parallax-content h2 {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .parallax-content p {
+      font-size: 1.2rem;
+    }
+
+    /* Section Styling */
+    .section {
+      padding: 80px 20px;
+      text-align: center;
+      background-color: #ffffff;
+      margin-bottom: 50px;
+    }
+
+    .section h2 {
+      font-size: 3rem;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    .section p {
+      font-size: 1.3rem;
+      color: #7f8c8d;
+      line-height: 1.8;
+      margin: 0 auto;
+      max-width: 1000px;
+    }
+
+    /* Features Section */
+    .features {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-top: 60px;
+    }
+
+    .feature {
+      width: 30%;
+      background: #f1f8f1;
+      padding: 30px;
+      margin: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      border-radius: 10px;
+      text-align: center;
+      position: relative;
+    }
+
+    .feature img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .feature h3 {
+      font-size: 2rem;
+      color: #2c3e50;
+      margin-bottom: 15px;
+    }
+
+    .feature p {
+      font-size: 1.2rem;
+      color: #636e72;
+      line-height: 1.7;
+    }
+
+    .feature:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Advanced Features Section */
+    .advanced-features {
+      background-color: #e3f2f9;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .advanced-features h2 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    .advanced-features p {
+      font-size: 1.3rem;
+      color: #7f8c8d;
+      margin-bottom: 2rem;
+    }
+
+    .advanced-features ul {
+      list-style-type: none;
+    }
+
+    .advanced-features li {
+      font-size: 1.2rem;
+      color: #2c3e50;
+      margin-bottom: 1.5rem;
+      transition: color 0.3s;
+    }
+
+    .advanced-features li:hover {
+      color: #4CAF50;
+    }
+
+    /* Call to Action Section */
+    .cta {
+      background-color: #4CAF50;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .cta a {
+      background-color: white;
+      color: #4CAF50;
+      padding: 15px 40px;
+      border-radius: 30px;
+      font-size: 1.4rem;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .cta a:hover {
+      background-color: #f1f1f1;
+      transform: scale(1.05);
+    }
+
+    /* Footer */
+    footer {
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 1em 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>About Virtual Herbal Garden</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Garden</a>
+      <a href="#">Contact</a>
+    </nav>
+    <p>Explore, learn, and grow with an immersive herbal experience.</p>
+  </header>
+
+  <!-- Parallax Section -->
+  <div class="parallax">
+    <div class="parallax-content">
+      <h2>Step Into a Virtual World of Medicinal Plants</h2>
+      <p>Experience the power of nature in your hands with interactive 3D models and guided tours, wherever you are.</p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Section 1: Introduction -->
+    <div class="section">
+      <h2>A New Way to Explore Herbal Wisdom</h2>
+      <p>Our Virtual Herbal Garden is an innovative digital platform designed to help you explore the world of medicinal plants from the comfort of your home. Whether you're a curious beginner or an experienced herbalist, the garden offers a rich collection of plants that are vital to traditional and modern wellness practices.</p>
+      <p>With the click of a button, you can rotate and zoom in on realistic 3D models of plants, giving you a unique perspective on the beauty and intricacies of herbal life. Discover the historical significance of plants like Neem, Brahmi, and Tulsi while learning how they are used in Ayurvedic treatments today.</p>
+    </div>
+
+    <!-- Section 2: Features -->
+    <div class="section">
+      <h2>Key Features of Our Virtual Garden</h2>
+      <div class="features">
+        <div class="feature">
+          <img src="https://example.com/3d-plant.jpg" alt="3D Plant Model">
+          <h3>Interactive 3D Models</h3>
+          <p>Our garden features high-quality, interactive 3D models that allow users to rotate, zoom, and explore plants from every angle.</p>
+        </div>
+        <div class="feature">
+          <img src="https://example.com/plant-info.jpg" alt="Plant Information">
+          <h3>Detailed Botanical Information</h3>
+          <p>Every plant in the garden comes with detailed information, including botanical names, medicinal uses, cultivation methods, and more.</p>
+        </div>
+        <div class="feature">
+          <img src="https://example.com/tour.jpg" alt="Virtual Tour">
+          <h3>Guided Virtual Tours</h3>
+          <p>Experience theme-based virtual tours on topics like immune health, skin care, and mental wellness, curated by herbal experts.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 3: Advanced Features -->
+    <div class="advanced-features">
+      <h2>Advanced Features for a Personalized Experience</h2>
+      <p>We offer tools designed to enhance your learning journey, allowing you to fully immerse yourself in the world of herbal medicine.</p>
+      <ul>
+        <li><strong>AI-Based Plant Suggestions:</strong> Get personalized recommendations based on your interests and health goals.</li>
+        <li><strong>Virtual Reality (VR) Integration:</strong> For an even more immersive experience, explore plants in a fully virtual environment with compatible VR headsets.</li>
+        <li><strong>Interactive Q&A:</strong> Ask questions about plants and get instant answers from our database of herbal knowledge.</li>
+        <li><strong>Custom Plant Collections:</strong> Create and manage your own collections of plants for easy access and study.</li>
+      </ul>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="cta">
+      <h2>Ready to Explore?</h2>
+      <a href="#">Start Your Journey Today</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Virtual Herbal Garden. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

@@ -17,6 +17,12 @@ class Conversion {
     //method to convert 24-hour time format to 12-hour format
     public String conversion(String timeInput) 
     {
+        if (!timeInput.matches("\\d{2}:\\d{2}"))// it is regular expression used for patterns.
+        {
+            System.out.println("Invalid input! Please enter time in HH:mm format (eg 14:30)");
+            System.exit(1);//exit the program if the input format is invalid
+        }
+
         //split the input time into hours and minutes
         String[] hhmm = timeInput.split(":");
         int hour = Integer.parseInt(hhmm[0]);//Extract hours
@@ -24,10 +30,10 @@ class Conversion {
         String meridiem;
         int hour12;
 
-        if (hour > 23 || hour < 0 || minute > 59 || minute < 0) 
+        if (hour>23||hour<0||minute>59||minute<0) 
         {
-            System.out.println("Invalid time entered! Hours must be between 0 and 23, and minutes between 0 and 59.");
-            System.exit(1); // Exit the program if the input is invalid
+            System.out.println("invalid time entered! Hours must be between 0 and 23, and minutes between 0 and 59");
+            System.exit(1);//Exit the program if the input is invalid
         }
         //convert from 24-hour to 12-hour format
         if(hour==0) 

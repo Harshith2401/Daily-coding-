@@ -22,7 +22,7 @@ class Circularshift
             nums[i]=sc.nextInt();
         }
         int nums1[]=new int [size];
-        //odd position
+        //even
         for(int i=1;i<size;i+=2)
         {
             int newindex=i+2;
@@ -32,7 +32,7 @@ class Circularshift
             }
             nums1[newindex]=nums[i];
         }
-        //even postion
+        //odd postion
         for(int i=0;i<size;i+=2)
         {
             int newindex=i-2;

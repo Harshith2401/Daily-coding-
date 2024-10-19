@@ -6,46 +6,43 @@ INPUT :
 12 23 71 34 92 43 12 67 72 88
 OUTPUT:
 71 88 92 23 12 34 72 43 12 67 */
-import java.util.Scanner;
-import java.util.Array;
-class Circularshift
-{
-    public static void main(String[] args)
-    {
-        Scanner sc=new Scanner(System.in);
-        System.out.println("Enter the size of the array");
-        int size=sc.nextInt();
-        int nums[]=new int[size];
-        System.out.println("Enter the elements of the array");
-        for(int i=0;i<size;i++)
-        {
-            nums[i]=sc.nextInt();
-        }
-        int nums1[]=new int [size];
-        //even
-        for(int i=1;i<size;i+=2)
-        {
-            int newindex=i+2;
-            if(newindex>=size)
-            {
-                newindex=newindex-size;
-            }
-            nums1[newindex]=nums[i];
-        }
-        //odd postion
-        for(int i=0;i<size;i+=2)
-        {
-            int newindex=i-2;
-            if(newindex<0)
-            {
-                newindex=newindex+size;
-            }
-            nums1[newindex]=nums[i];
-        }
-        for (int i = 0; i < size; i++) 
-        {
-            System.out.print(nums1[i] + " ");
-        }
-    }
 
+
+
+class CircularShift {
+    public static void main(String args[]) {
+        int arr[]={12,23,71,34,92,43,12,67,77,88}; // Directly assigned elements
+        int res[]=new int[10];
+
+        int iteration=arr.length/2-1;
+        int j=1;
+        while(j<=iteration)
+        {
+            // Shift odd-indexed elements
+            for(int i=1;i<arr.length;i+=2) {
+                int newIndex=i-2;
+                if(newIndex<0)
+                    newIndex=newIndex+arr.length; // Circular shift for negative index
+                res[newIndex]=arr[i];
+            }
+    
+            // Shift even-indexed elements right by 2 positions
+            for(int i=0;i<arr.length;i+=2) {
+                int newIndex=i+2;
+                if(newIndex>=arr.length)
+                    newIndex=newIndex-arr.length; // Circular shift for exceeding index
+                res[newIndex]=arr[i];
+            }
+            for(int k=0;k<res.length;k++)
+            {
+                arr[k]=res[k];
+            }
+            j+=1;
+        }
+
+        // Output the result
+        for(int k=0;k<res.length;k++)
+            System.out.print(res[k]+" ");
+    }
 }
+ 

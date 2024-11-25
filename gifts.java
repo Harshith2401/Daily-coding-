@@ -29,7 +29,7 @@ InputCopy
 1 2
 OutputCopy
 1 2
- */
+ */    s
 import java.util.Scanner;
 public class gifts {
     public static void main(String[] args) {

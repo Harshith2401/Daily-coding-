@@ -33,3 +33,28 @@ Explanation: Notice that as word1 is longer, "cd" is appended to the end.
 word1:  a   b   c   d
 word2:    p   q 
 merged: a p b q c   d */
+
+class Solution {
+    public String mergeAlternately(String word1, String word2) {
+
+        StringBuilder finalWord = new StringBuilder();
+        int len1 = word1.length();
+        int len2 = word2.length();
+        int minLen = Math.min(len1, len2);
+
+        // Merge alternately up to the length of the shorter string
+        for (int i = 0; i < minLen; i++) {
+            finalWord.append(word1.charAt(i));
+            finalWord.append(word2.charAt(i));
+        }
+
+        // Append the remaining part of the longer string
+        if (len1 > len2) {
+            finalWord.append(word1.substring(minLen));
+        } else {
+            finalWord.append(word2.substring(minLen));
+        }
+
+        return finalWord.toString();
+    }
+}

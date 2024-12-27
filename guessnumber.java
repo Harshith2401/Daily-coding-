@@ -35,7 +35,7 @@ Output: 1
 Constraints:
 
 1 <= n <= 231 - 1
-1 <= pick <= n */
+1 <= pick <= n */....
 
 /** 
  * Forward declaration of guess API.

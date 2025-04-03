@@ -66,3 +66,5 @@ class Solution {
         return areSiblings(root.left, x, y) || areSiblings(root.right, x, y);
     }
 }
+// sybling nodes with same parent .
+//cousin node with different parent.

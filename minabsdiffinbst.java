@@ -83,3 +83,5 @@ class Solution {
         return min;
     }
 }
+
+//usewd in order to reduse a loop as in order gives ascendin order of nodes so diff btween consiqutive is enough.

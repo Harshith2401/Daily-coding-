@@ -67,9 +67,9 @@ class Bfs
     {
         if(root==null)
         {
-            return -1;        
+            return 0;        
         }
-        return Math.max(height(root.left),height(root.right));
+        return 1 + Math.max(height(root.left),height(root.right));
     }
 
     public void bfs(node root,int level)
@@ -80,7 +80,7 @@ class Bfs
         }
         if(level==1)
         {
-            System.out.println(root.data);
+            System.out.print(root.data+" ");
         }
         bfs(root.left,level-1);
         bfs(root.right,level-1);
@@ -91,17 +91,18 @@ class Bfs
        Bfs r=new Bfs();
         r.insert(5);
         r.insert(6);
-        r.insert(8);
+        r.insert(3);
         r.insert(10);
-        r.insert(15);
+        r.insert(2);
         System.out.println("inorder");
         r.inorder(r.root);
-        System.out.println("postorder");
+        System.out.println("\npostorder");
         r.postorder(r.root);
-        System.out.println("preorder");
+        System.out.println("\npreorder");
         r.preorder(r.root);
         int h=r.height(r.root);
-        for(int i=0;i<h;i++)
+        System.out.println("\nBFS (level-order):");
+        for(int i=1;i<=h;i++)
         {
             r.bfs(r.root,i);
         }

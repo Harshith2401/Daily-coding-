@@ -38,7 +38,7 @@ Constraints:
 
 
 
-class Solution {
+ class Solution {
     public List<Integer> rightSideView(TreeNode root) {
         List<Integer> list = new ArrayList<>();
         rightView(root, list, 0);
@@ -47,9 +47,12 @@ class Solution {
 
     public void rightView(TreeNode root, List<Integer> list, int level) {
         if (root != null) {
+            if (level == list.size()) {
                 list.add(root.val);
+            }
             rightView(root.right, list, level + 1);
+            rightView(root.left, list, level + 1);
         }
     }
 }
-
+//timecomplexcity==O(N)

@@ -1,18 +1,4 @@
-/*Description
-Accepted
-Accepted
-Editorial
-Editorial
-Solutions
-Solutions
-Submissions
-Submissions
-Code
-Code
-Code Sample
-Testcase
-Testcase
-Test Result
+/*
 709. To Lower Case
 Solved
 Easy

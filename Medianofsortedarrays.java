@@ -80,3 +80,5 @@ class Solution {
         
     }
 }
+//tc=o(n+m)
+//sc=o(n+m)
